@@ -1,0 +1,49 @@
+extends layout.pug
+append title
+    |Home
+block body 
+    <script>localStorage.setItem('token',`#{token}`)
+    </script>
+    <div style="height:70vh; margin:auto;" id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+        <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img style="height:70vh; margin:auto;width:90%; opacity:0.9; filter: brightness(60%)" src="https://foodish-api.herokuapp.com/images/idly/idly60.jpg" class="d-block h-1/2" alt="...">
+            <h1 style="position:absolute; top:50%; display:block;width:90%; text-align:center; color:white;">Get Your Food Deliverd within 30 Min</h1>
+        </div>
+        <div class="carousel-item">
+            <img style="height:70vh; margin:auto;width:90%; opacity:0.9; filter: brightness(60%)" src="https://foodish-api.herokuapp.com/images/samosa/samosa9.jpg" class="d-block" alt="...">
+            <h1 style="position:absolute; top:50%; display:block;width:90%; text-align:center; color:white;">Get your food on your doorstep</h1>
+        </div>
+        <div class="carousel-item">
+            <img style="height:70vh; margin:auto; width:90%; opacity:0.9;filter: brightness(60%)" src="https://foodish-api.herokuapp.com/images/pizza/pizza47.jpg" class="d-block " alt="...">
+            <div style="position:absolute; top:50%; display:block;width:90%; text-align:center; color:white;">
+            <h1 >Get Your First order with 50% discount</h1>
+            <a class="btn btn-outline-success text-white border-white" href="/order">Order Now</a>
+            </div>
+        </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <div  class="d-flex justify-content-center align-items-center">
+        <div>
+        <a href="/order" class="card" style="width: 18rem; margin: 10px 0px; text-decoration: none; cursor: pointer;">
+            <img src="https://foodish-api.herokuapp.com/images/pizza/pizza45.jpg" style="width: 10rem; height: 10rem; margin: auto;" class="card-img-top" alt="...">
+            <div class="card-body">
+            <h3 style="text-align: center; color: black; text-decoration: none;">Order Now</h3>
+            <p class="card-text" style="text-align: center; color: black; text-decoration: none;">Order Food Under 30 min.</p>
+            </div>
+        </a>
+        </div>
+    </div>

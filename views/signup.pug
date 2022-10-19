@@ -1,0 +1,41 @@
+extends layout.pug 
+append title 
+    | Signup 
+block body
+    <form action="/signup" method="post">
+    <div class="container flex justify-content-center" style="height: 80vh;">
+    <!-- Email input -->
+    <div class="form-outline mb-4">
+        <input type="email" required name="email" id="form2Example1" class="form-control" />
+        <label class="form-label" for="form2Example1">Email address</label>
+    </div>
+    <!-- Username input -->
+    <div class="form-outline mb-4">
+        <input type="text" required name="username" id="form2Example1" class="form-control" />
+        <label class="form-label" for="form2Example1">Username</label>
+    </div>
+    <!-- Mobile input -->
+    <div class="form-outline mb-4">
+        <input type="number" maxlength="10" name="mobile" id="form2Example1" class="form-control" />
+        <label class="form-label" for="form2Example1">Mobile</label>
+    </div>
+
+    <!-- Password input -->
+    <div class="form-outline mb-4">
+        <input type="password" required name="password" id="form2Example2" class="form-control" />
+        <label class="form-label" for="form2Example2">Password</label>
+    </div>
+
+    <!-- 2 column grid layout for inline styling -->
+    <div class="row mb-4">
+        <div class="col d-flex justify-content-center">
+        
+        </div>
+
+        </div>
+        <input type="submit" class="btn btn-primary btn-block mb-4" value="Login">
+        <div class="text-center">
+            <p>Already member? <a href="/login">Login Here</a></p>
+            
+        </div></form>
+    </div>

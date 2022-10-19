@@ -1,0 +1,19 @@
+extends layout.pug 
+append title 
+    | Cart 
+block body
+    <h3 id="welcome"></h3>
+    |<script> 
+    |let user= '#{person}';
+    |document.querySelector('#welcome').innerHTML=`Welcome ${user.username}`
+    |</script>
+    <div class="cart">
+    </div>
+    |<script>
+    |let order= `#{orders}`;
+    |document.querySelector('.cart').innerHTML=order
+    |</script>
+    
+    
+    
+

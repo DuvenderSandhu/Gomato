@@ -1,0 +1,24 @@
+extends layout.pug
+append title
+    |Items
+block body 
+    <div class="d-flex justify-content-center align-items-center flex-wrap ">
+    each foodItem in foodItems
+        <div class="card m-4 " style="width: 18rem; display: flex; justify-content: center; align-items: center;">
+        <img style="height:150px;" src="/#{foodItem['item']}.jpg" class="card-img-top" alt="#{foodItem['item']}">
+        <div class="card-body">
+        <h5 class="card-title">#{foodItem['item']}</h5>
+        <div class="" style="display:flex; justify-content:space-between; align-items:center">
+            <h7 class="card-title">#{foodItem['from']}</h7>
+            <h6 class="card-title mx-2">₹#{foodItem['price']}</h6>
+        </div>
+
+        <form action="/cart" method="post">
+            <input  type="hidden"  name="order" value="#{foodItem['_id']}">
+            <input type="submit" class="btn btn-primary" value="Order This">
+        </form>
+        </div>
+        </div>
+        <script>document.querySelector('#token').innerHTML=localStorage.getItem('token')
+        </script>
+    </div>

@@ -1,0 +1,30 @@
+extends layout.pug
+append title
+    | #{search} in Gomato
+block body 
+    #searchedArray
+    if searchedArray.length
+        <div style="min-height:80vh;" class="d-flex justify-content-center align-items-center flex-wrap ">
+        each searched in searchedArray
+            <div class="card m-4 " style="width: 18rem; display: flex; justify-content: center; align-items: center;">
+            <img style="height:150px;" src="/#{searched['item']}.jpg" class="card-img-top" alt="#{searched['item']}">
+            <div class="card-body">
+            <h5 class="card-title">#{searched['item']}</h5>
+            <div class="" style="display:flex; justify-content:space-between; align-items:center">
+                <h7 class="card-title">#{searched['from']}</h7>
+                <h6 class="card-title mx-2">₹#{searched['price']}</h6>
+            </div>
+
+            <form action="/order/items/finalOrder" method="post">
+                <input  type="hidden"  name="_id" value="#{searched['_id']}">
+                <input type="submit" class="btn btn-primary" value="Order This">
+            </form>
+            </div>
+            </div>
+        </div>
+    else
+        <div style="height:80vh; display:flex; justify-content:center; align-items:center;">
+            <h2 style="text-align:center;">Nothing Found Here</h2>
+
+        </div>
+        

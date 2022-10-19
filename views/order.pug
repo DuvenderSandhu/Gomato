@@ -1,0 +1,18 @@
+extends layout.pug
+append title
+    |Order Now
+block body 
+    <div class="d-flex justify-content-center align-items-center flex-wrap ">
+    each uniqueItem in uniqueItems
+        <div class="card m-4 " style="width: 18rem; display: flex; justify-content: center; align-items: center;">
+        <img style="height:150px;" src="/#{uniqueItem}.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+        <h5 class="card-title">#{uniqueItem}</h5>
+        <form action="/order/items" method="post">
+            <input  type="hidden" name="item" value="#{uniqueItem}">
+            <input type="submit" class="btn btn-primary" value="Select">
+        </form>
+        </div>
+        </div>
+    </div>
+    

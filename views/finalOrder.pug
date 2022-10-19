@@ -1,0 +1,23 @@
+extends layout.pug
+append title
+    |Finalizing Your Order
+block body 
+    each items in item
+        <div class="card" style="width: 90%; margin: auto;">
+        <img src="/#{items['from']}.jpg" style="height: 80vh;" class="card-img-top" alt="...">
+        <div class="card-body">
+        <h3 style="text-align: center;" class="card-title">#{items['from']}</h3>
+        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero quo sint a doloribus eos suscipit blanditiis necessitatibus aspernatur ullam enim!</p>
+        <hr style="margin-bottom: 2rem ;">
+        <h5 class="card-title" style="text-align: center;">Your Selected Item From #{items['from']}</h5>
+
+        <div class="card" style="width: 15rem; margin: 2rem auto;">
+            <img src="/#{items['item']}.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">#{items['item']}</h5>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, sit?</p>
+              <a href="/order/items/finalOrder/payment" class="btn btn-primary">Order Now</a>
+                </div>
+            </div>
+            </div>
+            </div>
